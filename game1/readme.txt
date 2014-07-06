@@ -26,4 +26,4 @@ TOOLS
 LIBRARIES
 ---------
 *Advanced Tiled Loader (ATL)(not maintained)
-*Simple Tiled Loader (STI)(maintained, to be implemented in place of ATL)
+*Simple Tiled Implementationb (STI)(maintained, to be implemented in place of ATL) -> http://karai17.github.io/Simple-Tiled-Implementation/index.html
