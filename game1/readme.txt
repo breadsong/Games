@@ -21,3 +21,9 @@ TOOLS
 -----
 *LOVE engine 9.1
 *Tiled map editor -> http://www.mapeditor.org/
+
+
+LIBRARIES
+---------
+*Advanced Tiled Loader (ATL)(not maintained)
+*Simple Tiled Loader (STI)(maintained, to be implemented in place of ATL)
