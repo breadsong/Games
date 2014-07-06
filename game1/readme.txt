@@ -13,5 +13,5 @@ NOT WORKING
 TO DO
 -----
 *Move map loading from ATL library to STI library
-*Program player loadoats with different properties
+*Program player loadouts with different properties
 *Program map/level transitions
