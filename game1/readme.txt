@@ -15,3 +15,8 @@ TO DO
 *Move map loading from ATL library to STI library
 *Program player loadouts with different properties
 *Program map/level transitions
+
+
+TOOLS
+-----
+*Tiled map editor -> http://www.mapeditor.org/
