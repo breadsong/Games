@@ -109,8 +109,9 @@ function love.draw()
    
     love.graphics.setColor(255, 255, 255)
     love.graphics.print("Player coordinates: ("..x..","..y..")", 5, 5)
-    love.graphics.print("Current state: "..p.state, 5, 20)
-    love.graphics.print("Current tile: ("..tileX..", "..tileY..")", 5, 35)
+    love.graphics.print("Camera coordinates: ("..camera._x..","..camera._y..")", 5, 20)
+    love.graphics.print("Current state: "..p.state, 5, 35)
+    love.graphics.print("Current tile: ("..tileX..", "..tileY..")", 5, 50)
 end
 
 
