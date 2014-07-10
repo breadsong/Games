@@ -2,12 +2,13 @@ WORKING
 -------
 *Character states and movement
 *Animation
+*Camera movement
 *Map loading (temporarily)
 
 
 NOT WORKING
 -----------
-*Camera movement
+*Nothing
 
 
 TO DO

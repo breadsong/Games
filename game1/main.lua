@@ -83,7 +83,7 @@ function love.update(dt)
     animation:update(dt)
 
     -- restrict the camera
-    camera:setBounds(0, 0, width, math.floor(height / 8))
+    --camera:setBounds(0, 0, width, math.floor(height / 8))
 
     -- center the camera on the player
     camera:setPosition(math.floor(p.x - width / 2), math.floor(p.y - height / 2))
