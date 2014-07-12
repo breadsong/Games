@@ -46,6 +46,7 @@ function love.update(dt)
     --map:update(dt)
 
     -- check controls
+    --[[
     if love.keyboard.isDown("right") then
         p:moveRight()
         animation:flip(false, false)
@@ -57,9 +58,9 @@ function love.update(dt)
     if love.keyboard.isDown("x") then
         p:jump()
     end
- 
+    --]]
     -- update the player's position and check for collisions
-    p:update(dt, gravity, map)
+    p:UPDATE_PLAYER(dt, gravity, map)
 
     --[[ stop the player when they hit the borders
     p.x = math.clamp(p.x, 0, width * 2 - p.width)
@@ -70,6 +71,7 @@ function love.update(dt)
     --]]
  
     -- update the sprite animation
+    --[[
     if (p.state == "stand") then
         animation:switch(1, 4, 200)
     end
@@ -81,7 +83,7 @@ function love.update(dt)
         animation:switch(3, 1, 300)
     end
     animation:update(dt)
-
+    --]]
     -- restrict the camera
     --camera:setBounds(0, 0, width, math.floor(height / 8))
 
@@ -124,10 +126,10 @@ function love.keyreleased(key)
     if key == "escape" then
         love.event.push("quit")  -- actually causes the app to quit
     end
-    if (key == "right") or (key == "left") then
+    if (key == "d") or (key == "a") then
         p:stop()
     end
-    if (key == "x") then
+    if (key == "w") then
         hasJumped = false
     end
 end

@@ -54,9 +54,49 @@ function Player:collide(event)
         self.ySpeed = 0
     end
 end
+
+
+function Player:UPDATE_PLAYER(dt, gravity, map)
+    -- check controls
+    if love.keyboard.isDown("d") then
+        p:moveRight()
+        animation:flip(false, false)
+    end
+    if love.keyboard.isDown("a") then
+        p:moveLeft()
+        animation:flip(true, false)
+    end
+    if love.keyboard.isDown("w") then
+        p:jump()
+    end
+ 
+    -- update the player's position and check for collisions
+    self:updatepos(dt, gravity, map)
+
+    --[[ stop the player when they hit the borders
+    p.x = math.clamp(p.x, 0, width * 2 - p.width)
+    if p.y < 0 then p.y = 0 end
+    if p.y > yFloor - p.height then
+        p:hitFloor(yFloor)
+    end-
+    --]]
+ 
+    -- update the sprite animation
+    if (p.state == "stand") then
+        animation:switch(1, 4, 200)
+    end
+    if (p.state == "moveRight") or (p.state == "moveLeft") then
+        animation:switch(2, 4, 120)
+    end
+    if (p.state == "jump") or (p.state == "fall") then
+        animation:reset()
+        animation:switch(3, 1, 300)
+    end
+    animation:update(dt)
+end
  
 -- Update function
-function Player:update(dt, gravity, map)
+function Player:updatepos(dt, gravity, map)
     local halfX = self.width / 2
     local halfY = self.height / 2
    
