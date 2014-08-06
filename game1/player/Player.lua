@@ -55,7 +55,7 @@ function Player:collide(event)
     end
 end
 
-
+--Update function
 function Player:UPDATE_PLAYER(dt, gravity, map)
     -- check controls
     if love.keyboard.isDown("d") then
@@ -73,15 +73,10 @@ function Player:UPDATE_PLAYER(dt, gravity, map)
     -- update the player's position and check for collisions
     self:updatepos(dt, gravity, map)
 
-    --[[ stop the player when they hit the borders
-    p.x = math.clamp(p.x, 0, width * 2 - p.width)
-    if p.y < 0 then p.y = 0 end
-    if p.y > yFloor - p.height then
-        p:hitFloor(yFloor)
-    end-
-    --]]
- 
+     
     -- update the sprite animation
+    self:updateanim()
+    --[[
     if (p.state == "stand") then
         animation:switch(1, 4, 200)
     end
@@ -92,10 +87,11 @@ function Player:UPDATE_PLAYER(dt, gravity, map)
         animation:reset()
         animation:switch(3, 1, 300)
     end
+    --]]
     animation:update(dt)
 end
  
--- Update function
+-- update the player's position and check for collisions
 function Player:updatepos(dt, gravity, map)
     local halfX = self.width / 2
     local halfY = self.height / 2
@@ -159,6 +155,21 @@ function Player:updatepos(dt, gravity, map)
     -- update the player's state
     self.state = self:getState()
 end
+
+-- update the sprite animation
+function PLayer:updateanim()
+    if (p.state == "stand") then
+        animation:switch(1, 4, 200)
+    end
+    if (p.state == "moveRight") or (p.state == "moveLeft") then
+        animation:switch(2, 4, 120)
+    end
+    if (p.state == "jump") or (p.state == "fall") then
+        animation:reset()
+        animation:switch(3, 1, 300)
+    end
+end
+
 
 -- returns player's state as a string
 function Player:getState()
