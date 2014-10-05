@@ -157,7 +157,7 @@ function Player:updatepos(dt, gravity, map)
 end
 
 -- update the sprite animation
-function PLayer:updateanim()
+function Player:updateanim()
     if (p.state == "stand") then
         animation:switch(1, 4, 200)
     end
