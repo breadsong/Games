@@ -33,9 +33,7 @@ function Player:jump()
 end
  
 function Player:moveRight()
-    if self.xSpeed < self.runSpeed then
-        self.xSpeed = self.xSpeed + 100
-    end
+    self.xSpeed = self.runSpeed
 end
  
 function Player:moveLeft()
